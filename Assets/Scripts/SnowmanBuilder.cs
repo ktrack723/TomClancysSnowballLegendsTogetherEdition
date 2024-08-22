@@ -8,6 +8,7 @@ public class SnowmanBuilder : MonoBehaviour
     public static SnowmanBuilder Instance;
 
     public GameObject PlayerPrefab;
+    public GameObject PlayerSpawnEffect;
     public Transform PlayerSpawnParent;
 
     public GameObject MainCamera;
@@ -52,7 +53,9 @@ public class SnowmanBuilder : MonoBehaviour
         InBuildMode = false;
 
         var player = Instantiate(PlayerPrefab);
+        var effect = Instantiate(PlayerSpawnEffect);
         player.transform.position = PlayerSpawnParent.transform.position;
+        effect.transform.position = PlayerSpawnParent.transform.position;
 
         cameraFollow.target = player.transform;
     }
