@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class BF_PlayerSnow : MonoBehaviour
 {
+    public static BF_PlayerSnow Instance;
+
     public Collider playerCollider;
     public SphereCollider sphereColider;
     public ParticleSystem particleSys;
@@ -28,6 +31,12 @@ public class BF_PlayerSnow : MonoBehaviour
     private Mesh mesh = null;
     private ParticleSystem.MainModule pSMain;
 
+
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -74,6 +83,8 @@ public class BF_PlayerSnow : MonoBehaviour
         Victim victim = collision.gameObject.GetComponent<Victim>();
         if (victim != null)
         {
+            victim.IsCaught = true;
+            Destroy(victim.rigidbody);
             StaticVictimList.Add((victim, sphereColider.radius * sphereColider.transform.localScale.x));
             collision.gameObject.transform.SetParent(StiatcVictimTransformParent, true);
         }
@@ -189,5 +200,14 @@ public class BF_PlayerSnow : MonoBehaviour
             StaticVictimList.Remove(obj);
         }
         PendingRemoveStaticVictimList.Clear();
+    }
+
+    public List<Victim> GetAllAttachedVictims()
+    {
+        var res = new List<Victim>(StaticVictimList.Count + GrowthVictimList.Count);
+        res.AddRange(StaticVictimList.Select(obj => obj.Item1));
+        res.AddRange(GrowthVictimList.Select(obj => obj.Item1));
+
+        return res;
     }
 }

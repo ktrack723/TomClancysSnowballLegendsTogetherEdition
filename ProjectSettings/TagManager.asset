@@ -9,6 +9,7 @@ TagManager:
   - URUKManager
   - House
   - BGM
+  - Wall
   layers:
   - Default
   - TransparentFX
