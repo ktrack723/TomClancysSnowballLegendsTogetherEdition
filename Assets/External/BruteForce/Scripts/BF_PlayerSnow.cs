@@ -125,7 +125,7 @@ public class BF_PlayerSnow : MonoBehaviour
     {
         ChangePlayerMass();
         CheckSnowUnderneath();
-        if (rB.velocity.magnitude < 0.25f)
+        if (rB.velocity.magnitude < 0.5f)
         {
             RemoveSnow(0.2f);
         }
