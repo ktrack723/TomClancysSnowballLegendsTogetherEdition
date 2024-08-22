@@ -17,7 +17,7 @@ public class Victim : MonoBehaviour
     {
         collider = GetComponent<Collider>();
         rigidbody = GetComponent<Rigidbody>();
-        Kill();
+        //Kill();
     }
 
     void Kill()
