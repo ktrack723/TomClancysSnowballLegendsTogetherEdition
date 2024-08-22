@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using EasyTransition;
 
 public class TimerUI : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class TimerUI : MonoBehaviour
 
     public bool timerStop = false;
     public TextMeshPro snowManText;
+
+    public Camera mainCam;
+    public Camera endingCam;
+
+    public TransitionSettings transition;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +48,28 @@ public class TimerUI : MonoBehaviour
         else
         {
             TMPro.text = $"Time Over!";
+            EndGame();
             snowManText.gameObject.SetActive(false);
         }
+    }
+
+    private void Update()
+    {
+        if (endingCam.enabled == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Backspace))
+            {
+                TransitionManager.Instance().Transition("Heaven", transition, 0);
+            }
+        }
+    }
+
+    public void EndGame()
+    {
+        TransitionManager.Instance().Transition(transition, 0);
+        TransitionManager.Instance().onTransitionCutPointReached = () => {
+            mainCam.enabled = false;
+            endingCam.enabled = true;
+        };
     }
 }

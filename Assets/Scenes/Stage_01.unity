@@ -2728,7 +2728,7 @@ GameObject:
   - component: {fileID: 365801313}
   - component: {fileID: 365801315}
   m_Layer: 0
-  m_Name: Text (TMP) (8)
+  m_Name: TimerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2904,6 +2904,9 @@ MonoBehaviour:
   RemainTimeSeconds: 180
   timerStop: 0
   snowManText: {fileID: 0}
+  mainCam: {fileID: 330585545}
+  endingCam: {fileID: 564566008}
+  transition: {fileID: 11400000, guid: ad361d99bb2df454d961db24801d50a5, type: 2}
 --- !u!1001 &376839991
 PrefabInstance:
   m_ObjectHideFlags: 0
