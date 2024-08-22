@@ -63,15 +63,7 @@ public class BF_PlayerSnow : MonoBehaviour
             rB.angularDrag = 5f;
         }
     }
-
-    private void OnCollisionStay(Collision collision)
-    {
-        if (lerpIce >= 0.925f && collision.collider.gameObject.layer == 4)
-        {
-            AddSnow(6);
-        }
-    }
-
+    
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.impulse.magnitude>10)
@@ -92,8 +84,10 @@ public class BF_PlayerSnow : MonoBehaviour
         if (playerCollider.transform.localScale.x < 5f)
         {
             speedMult = Mathf.Clamp(rB.velocity.magnitude * 0.02f,0,1);
-            playerCollider.transform.localScale += Vector3.zero + Vector3.one * 0.0035f * 2 * multiplier* speedMult;
-            playerCollider.transform.localScale += Vector3.zero + Vector3.one * 0.005f * 2 * multiplier * speedMult;
+            playerCollider.transform.localScale += Vector3.zero + Vector3.one * 0.005f * 2 * multiplier* speedMult;
+            transform.position = new Vector3(transform.position.x,
+                transform.position.y + 0.005f * 8 * multiplier * speedMult,
+                transform.position.z);
         }
     }
     private void RemoveSnow(float multiplier)
@@ -104,7 +98,6 @@ public class BF_PlayerSnow : MonoBehaviour
             {
                // SnowPlayer.gameObject.SetActive(true);
             }
-            playerCollider.transform.localScale -= Vector3.zero + Vector3.one * 0.0035f * 4 * multiplier;
             playerCollider.transform.localScale -= Vector3.zero + Vector3.one * 0.005f * 4 * multiplier;
         }
         if (playerCollider.transform.localScale.x < 1.1f)
@@ -114,7 +107,6 @@ public class BF_PlayerSnow : MonoBehaviour
                // SnowPlayer.gameObject.SetActive(false);
             }
             playerCollider.transform.localScale = Vector3.one * 1.1f;
-            playerCollider.transform.localScale = Vector3.one * 1.1f;
         }
     }
 
@@ -122,7 +114,14 @@ public class BF_PlayerSnow : MonoBehaviour
     {
         ChangePlayerMass();
         CheckSnowUnderneath();
-        RemoveSnow(0.05f);
+        if (rB.velocity.magnitude < 0.25f)
+        {
+            RemoveSnow(0.2f);
+        }
+        else
+        {
+            AddSnow(4);
+        }
     }
 
     private void CheckSnowUnderneath()
