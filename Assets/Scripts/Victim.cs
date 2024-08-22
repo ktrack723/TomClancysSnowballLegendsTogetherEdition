@@ -17,5 +17,25 @@ public class Victim : MonoBehaviour
     {
         collider = GetComponent<Collider>();
         rigidbody = GetComponent<Rigidbody>();
+        Kill();
+    }
+
+    void Kill()
+    {
+        SkinnedMeshRenderer[] skinnedMeshRenderer = GetComponentsInChildren<SkinnedMeshRenderer>();
+
+        foreach(SkinnedMeshRenderer skinned in skinnedMeshRenderer)
+        {
+            // Check if the material has a BaseMap property
+            if (skinned.material.HasProperty("_BaseMap"))
+            {
+                // Change the color of the BaseMap to black
+                skinned.material.SetColor("_BaseColor", Color.black);
+            }
+            else
+            {
+                Debug.LogError("Material does not have a BaseMap property.");
+            }
+        }
     }
 }
