@@ -84,7 +84,7 @@ public class BF_PlayerSnow : MonoBehaviour
         if (victim != null)
         {
             victim.IsCaught = true;
-            Destroy(victim.rigidbody);
+            victim.rigidbody.isKinematic = true;
             StaticVictimList.Add((victim, sphereColider.radius * sphereColider.transform.localScale.x));
             //GrowthVictimList.Add((victim, victim.transform.localScale));
             //collision.gameObject.transform.SetParent(GrowthVictimTransformParent, true);
