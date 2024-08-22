@@ -48722,6 +48722,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Squid
       objectReference: {fileID: 0}
+    - target: {fileID: 6511707354171424737, guid: cff5c4216e55745cca3483e644c1ded3,
+        type: 3}
+      propertyPath: m_Height
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 7055623703143010623, guid: cff5c4216e55745cca3483e644c1ded3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -48730,7 +48735,7 @@ PrefabInstance:
     - target: {fileID: 7055623703143010623, guid: cff5c4216e55745cca3483e644c1ded3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 3.75
       objectReference: {fileID: 0}
     - target: {fileID: 7055623703143010623, guid: cff5c4216e55745cca3483e644c1ded3,
         type: 3}
