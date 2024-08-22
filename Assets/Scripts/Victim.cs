@@ -6,6 +6,7 @@ public class Victim : MonoBehaviour
 {
     public Collider collider;
     public Rigidbody rigidbody;
+    public Runaway runaway;
 
     public bool IsCaught = false;
     private bool hasTriggeredSpawn = false;
@@ -17,7 +18,10 @@ public class Victim : MonoBehaviour
     {
         collider = GetComponent<Collider>();
         rigidbody = GetComponent<Rigidbody>();
+        runaway = GetComponent<Runaway>();
         //Kill();
+
+        AnimalManager.Instance.VictimList.Add(this);
     }
 
     public void Kill()
@@ -42,6 +46,13 @@ public class Victim : MonoBehaviour
         if (anim)
         {
             anim.enabled = false;
+        }
+
+        AnimalManager.Instance.VictimList.Remove(this);
+
+        if (AnimalManager.Instance.VictimList.Count == 0)
+        {
+            // end
         }
     }
 }

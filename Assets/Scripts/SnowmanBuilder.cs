@@ -63,6 +63,11 @@ public class SnowmanBuilder : MonoBehaviour
         effect.transform.position = PlayerSpawnParent.transform.position;
 
         cameraFollow.target = player.transform;
+
+        foreach (var obj in AnimalManager.Instance.VictimList)
+        {
+            obj.runaway.player = player.transform;
+        }
     }
 
     public void EnterBuilderMode()
