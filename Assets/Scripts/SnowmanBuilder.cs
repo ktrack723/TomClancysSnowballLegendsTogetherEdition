@@ -129,7 +129,17 @@ public class SnowmanBuilder : MonoBehaviour
 
     private void MoveBall()
     {
-        BF_PlayerSnow.Instance.transform.Rotate(new Vector3(inputDirection.z, 0, -inputDirection.x) * 1);
+        // Create a rotation vector from input directions
+        Vector3 rotationVector = new Vector3(inputDirection.z, 0, -inputDirection.x);
+
+        // Convert rotation vector to a Quaternion using Euler angles
+        Quaternion rotation = Quaternion.Euler(rotationVector);
+
+        // Rotate around the world Y axis and adjust pitch and roll in world space
+        BF_PlayerSnow.Instance.transform.rotation = Quaternion.Euler(0, rotation.eulerAngles.y, 0) * BF_PlayerSnow.Instance.transform.rotation;
+        BF_PlayerSnow.Instance.transform.Rotate(rotationVector * 1, Space.World);
+
+        // Reset input direction
         inputDirection = Vector3.zero;
     }
 
