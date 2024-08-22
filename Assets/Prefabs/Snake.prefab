@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 753237980904202148}
   - component: {fileID: 3197993550904281548}
   m_Layer: 0
-  m_Name: Taipan
+  m_Name: Snake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -461,7 +461,7 @@ CapsuleCollider:
   m_Radius: 0.2
   m_Height: 0.75
   m_Direction: 2
-  m_Center: {x: 0, y: 0.15, z: 0.15}
+  m_Center: {x: 0, y: 0.25, z: 0}
 --- !u!54 &7878302605826150151
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -711,7 +711,7 @@ GameObject:
   - component: {fileID: 8353291457742202184}
   - component: {fileID: 1932150606405891662}
   m_Layer: 0
-  m_Name: Pudu
+  m_Name: Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

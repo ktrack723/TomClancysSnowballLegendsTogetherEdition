@@ -559,7 +559,7 @@ GameObject:
   - component: {fileID: 2083643985236542113}
   - component: {fileID: 5751790717496870689}
   m_Layer: 0
-  m_Name: Sparrow
+  m_Name: Bird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

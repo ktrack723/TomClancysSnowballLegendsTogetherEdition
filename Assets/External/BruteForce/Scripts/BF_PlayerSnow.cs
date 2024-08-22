@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using TMPro;
 
 public class BF_PlayerSnow : MonoBehaviour
 {
@@ -36,6 +37,19 @@ public class BF_PlayerSnow : MonoBehaviour
     private Mesh mesh = null;
     private ParticleSystem.MainModule pSMain;
 
+    public List<TextMeshPro> counters;
+
+    public enum EAnimals
+    {
+        Gecko = 0,
+        Monkey,
+        Fish,
+        Bird,
+        Deer,
+        Rat,
+        Snake
+    }
+
 
 
     private void Awake()
@@ -52,6 +66,12 @@ public class BF_PlayerSnow : MonoBehaviour
         mesh = null;
         rB = this.GetComponent<Rigidbody>();
         pSMain = particleSys.main;
+
+        for (int i = 0; i < System.Enum.GetNames(typeof(EAnimals)).Count(); i++)
+        {
+            string textName = ((EAnimals)i).ToString() + "Text";
+            counters.Add(GameObject.Find(textName).GetComponent<TextMeshPro>());
+        }
     }
 
     private void CheckIceCols(float snowCol)
@@ -104,6 +124,13 @@ public class BF_PlayerSnow : MonoBehaviour
             victim.transform.position = newVictimPosition;
 
             collision.gameObject.transform.SetParent(sphereColider.transform, true);
+
+            int index = (int)System.Enum.Parse(typeof(EAnimals), collision.gameObject.name);
+            string tempText = counters[index].text;
+            string lastNumber = "" + tempText[tempText.Length - 1];
+            int lastChar = System.Int32.Parse(lastNumber);
+            lastChar += 1;
+            counters[index].text = ((EAnimals)index).ToString() + " : " + lastChar;
         }
     }
 

@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 4721708951670048583}
   - component: {fileID: 3463615963017323410}
   m_Layer: 0
-  m_Name: Muskrat
+  m_Name: Rat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

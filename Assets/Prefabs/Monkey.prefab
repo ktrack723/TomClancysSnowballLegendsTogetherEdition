@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 5593011493936440317}
   - component: {fileID: 422170447137844910}
   m_Layer: 0
-  m_Name: Colobus
+  m_Name: Monkey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
