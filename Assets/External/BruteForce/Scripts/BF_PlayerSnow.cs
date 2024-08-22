@@ -79,10 +79,6 @@ public class BF_PlayerSnow : MonoBehaviour
         {
             AddSnow(6);
         }
-        else
-        {
-            RemoveSnow(0.05f);
-        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -104,7 +100,7 @@ public class BF_PlayerSnow : MonoBehaviour
 
     private void AddSnow(float multiplier)
     {
-        if (playerCollider.transform.localScale.x < 7f)
+        if (playerCollider.transform.localScale.x < 5f)
         {
             speedMult = Mathf.Clamp(rB.velocity.magnitude * 0.02f,0,1);
             playerCollider.transform.localScale += Vector3.zero + Vector3.one * 0.0035f * 2 * multiplier* speedMult;
@@ -137,6 +133,7 @@ public class BF_PlayerSnow : MonoBehaviour
     {
         ChangePlayerMass();
         CheckSnowUnderneath();
+        RemoveSnow(0.05f);
     }
 
     private void CheckSnowUnderneath()
