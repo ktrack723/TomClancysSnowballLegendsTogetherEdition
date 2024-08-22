@@ -27,6 +27,8 @@ public class Drop_The_Ball : MonoBehaviour
                 snow.rB.isKinematic = true;
                 snow.rB.useGravity = false;
                 enabled = false;
+
+                SnowmanBuilder.Instance.BackToGameAfterSeconds(3f);
                 return;
             }
 
@@ -52,6 +54,8 @@ public class Drop_The_Ball : MonoBehaviour
                 snow.rB.isKinematic = true;
                 snow.rB.useGravity = false;
                 enabled = false;
+
+                SnowmanBuilder.Instance.BackToGameAfterSeconds(3f);
             }
             else
             {

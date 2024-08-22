@@ -23,8 +23,10 @@ public class SnowmanBuilder : MonoBehaviour
 
     private float OriginalDropperMoveSpeed;
 
-    private bool InBuildMode = false;
+    private bool InBuildMode = true;
     private bool IsDropped = false;
+
+    private Vector3 inputDirection;
 
     private void Awake()
     {
@@ -34,6 +36,11 @@ public class SnowmanBuilder : MonoBehaviour
 
     public void BackToGame()
     {
+        if (!InBuildMode)
+        {
+            return;
+        }
+
         MainCamera.SetActive(true);
         BuilderCamera.SetActive(false);
 
@@ -47,6 +54,11 @@ public class SnowmanBuilder : MonoBehaviour
 
     public void EnterBuilderMode()
     {
+        if (InBuildMode)
+        {
+            return;
+        }
+
         MainCamera.SetActive(false);
         BuilderCamera.SetActive(true);
 
@@ -79,17 +91,37 @@ public class SnowmanBuilder : MonoBehaviour
             {
                 DropSnowball();
             }
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                inputDirection += Vector3.left;
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                inputDirection += Vector3.right;
+            }
+            if (Input.GetKey(KeyCode.W))
+            {
+                inputDirection += Vector3.forward;
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                inputDirection += Vector3.back;
+            }
+            MoveBall();
         }
 
 
-        if (Input.GetKeyDown(KeyCode.LeftBracket))
+        if (Input.GetKeyDown(KeyCode.O))
         {
             EnterBuilderMode();
         }
-        if (Input.GetKeyDown(KeyCode.RightBracket))
-        {
-            BackToGame();
-        }
+    }
+
+    private void MoveBall()
+    {
+        BF_PlayerSnow.Instance.transform.Rotate(new Vector3(inputDirection.z, 0, -inputDirection.x) * 1);
+        inputDirection = Vector3.zero;
     }
 
     private void DropSnowball()
@@ -105,5 +137,17 @@ public class SnowmanBuilder : MonoBehaviour
         {
             DropperMoveSpeed = OriginalDropperMoveSpeed;
         }
+    }
+
+    public void BackToGameAfterSeconds(float sleepTimes)
+    {
+        StartCoroutine(internalCoroutine(sleepTimes));
+    }
+
+    private IEnumerator internalCoroutine(float sleepTimes)
+    {
+        yield return new WaitForSeconds(sleepTimes);
+
+        BackToGame();
     }
 }
