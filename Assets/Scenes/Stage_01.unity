@@ -53325,6 +53325,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8198811886697054444, guid: 1ee7cafc0d6d7e04e96f583e0a3f4b04,
         type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 365801315}
+    - target: {fileID: 8198811886697054444, guid: 1ee7cafc0d6d7e04e96f583e0a3f4b04,
+        type: 3}
       propertyPath: MainCamera
       value: 
       objectReference: {fileID: 1410396222}
