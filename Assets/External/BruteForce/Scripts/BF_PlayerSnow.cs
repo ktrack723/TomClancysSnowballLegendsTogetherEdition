@@ -40,6 +40,8 @@ public class BF_PlayerSnow : MonoBehaviour
     private Mesh mesh = null;
     private ParticleSystem.MainModule pSMain;
 
+    public AudioClip Yum;
+
     public List<TextMeshPro> counters;
 
     public enum EAnimals
@@ -130,6 +132,8 @@ public class BF_PlayerSnow : MonoBehaviour
 
             int index = (int)System.Enum.Parse(typeof(EAnimals), collision.gameObject.name);
             counters[index].fontStyle |= FontStyles.Strikethrough;
+
+            GetComponent<AudioSource>().PlayOneShot(Yum, 4.5f);
         }
     }
 
