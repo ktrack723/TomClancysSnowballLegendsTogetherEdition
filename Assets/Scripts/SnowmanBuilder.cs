@@ -22,7 +22,6 @@ public class SnowmanBuilder : MonoBehaviour
 
     public float DropperMoveSpeed;
 
-    public float DefaultCameraHeight;
     public float HighestSnowmanHeight;
 
     private float OriginalDropperMoveSpeed;
@@ -37,7 +36,6 @@ public class SnowmanBuilder : MonoBehaviour
         Instance = this;
         BackToGame();
 
-        DefaultCameraHeight = BuilderCamera.transform.position.y;
         HighestSnowmanHeight = 0f;
     }
 
@@ -72,6 +70,10 @@ public class SnowmanBuilder : MonoBehaviour
         InBuildMode = true;
         IsDropped = false;
 
+        var newPos = transform.position;
+        newPos.y = HighestSnowmanHeight;
+        transform.position = newPos;
+
         BF_PlayerSnow.Instance.rB.isKinematic = true;
         BF_PlayerSnow.Instance.transform.SetParent(SnowmanDropper.transform, false);
         BF_PlayerSnow.Instance.transform.localPosition = Vector3.zero;
@@ -91,10 +93,6 @@ public class SnowmanBuilder : MonoBehaviour
     {
         float t = (Mathf.Sin(Time.time * DropperMoveSpeed) + 1.0f) / 2.0f;
         SnowmanDropper.transform.position = Vector3.Lerp(SnowmanDropTransformLeft.position, SnowmanDropTransformRight.position, t);
-
-        var newPos = BuilderCamera.transform.position;
-        newPos.y = DefaultCameraHeight + HighestSnowmanHeight;
-        BuilderCamera.transform.position = newPos;
 
         if (InBuildMode && !IsDropped)
         {
