@@ -51751,6 +51751,12 @@ PrefabInstance:
       objectReference: {fileID: 939244185}
     - target: {fileID: 8198811886697054444, guid: 1ee7cafc0d6d7e04e96f583e0a3f4b04,
         type: 3}
+      propertyPath: PlayerSpawnEffect
+      value: 
+      objectReference: {fileID: 5989379315760553701, guid: 819612caa510043d68730bfa134eb1d6,
+        type: 3}
+    - target: {fileID: 8198811886697054444, guid: 1ee7cafc0d6d7e04e96f583e0a3f4b04,
+        type: 3}
       propertyPath: PlayerSpawnParent
       value: 
       objectReference: {fileID: 1391915355}
