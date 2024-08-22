@@ -254,6 +254,7 @@ MonoBehaviour:
   collider: {fileID: 0}
   rigidbody: {fileID: 0}
   IsCaught: 0
+  originalPrefab: {fileID: 1710436492356109863}
 --- !u!114 &422170447137844910
 MonoBehaviour:
   m_ObjectHideFlags: 0

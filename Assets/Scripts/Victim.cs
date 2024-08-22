@@ -8,17 +8,14 @@ public class Victim : MonoBehaviour
     public Rigidbody rigidbody;
 
     public bool IsCaught = false;
+    private bool hasTriggeredSpawn = false;
+
+    public GameObject originalPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
         collider = GetComponent<Collider>();
         rigidbody = GetComponent<Rigidbody>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

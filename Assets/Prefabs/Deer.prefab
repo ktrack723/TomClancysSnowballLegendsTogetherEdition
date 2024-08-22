@@ -831,6 +831,7 @@ MonoBehaviour:
   collider: {fileID: 0}
   rigidbody: {fileID: 0}
   IsCaught: 0
+  originalPrefab: {fileID: 8352590344108449309}
 --- !u!136 &8353291457742202184
 CapsuleCollider:
   m_ObjectHideFlags: 0
