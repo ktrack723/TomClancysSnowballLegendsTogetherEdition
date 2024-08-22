@@ -5077,6 +5077,7 @@ MonoBehaviour:
   GrowthVictimTransformParent: {fileID: 891257453105368715}
   ddb: {fileID: 4074999945035266678}
   rB: {fileID: 0}
+  counters: []
 --- !u!114 &4074999945035266678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5090,6 +5091,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snow: {fileID: 6983352896137051450}
+  hitEffect: {fileID: 4659759025076835340, guid: c6b524135510c473aaa4c7f12123062c,
+    type: 3}
 --- !u!1 &6983352896513281705
 GameObject:
   m_ObjectHideFlags: 0

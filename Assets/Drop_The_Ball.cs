@@ -7,6 +7,8 @@ public class Drop_The_Ball : MonoBehaviour
     public static Drop_The_Ball Instance;
     public BF_PlayerSnow snow;
 
+    public GameObject hitEffect;
+
     void Start()
     {
         Instance = this;
@@ -24,7 +26,7 @@ public class Drop_The_Ball : MonoBehaviour
             // FIrst SnOWBalL is Safe
             if (snow.index == 0)
             {
-                FixSnowball();
+                FixSnowball(collision.contacts[0].point);
                 return;
             }
 
@@ -47,7 +49,7 @@ public class Drop_The_Ball : MonoBehaviour
 
             if (isSafe)
             {
-                FixSnowball();
+                FixSnowball(collision.contacts[0].point);
             }
             else
             {
@@ -58,7 +60,7 @@ public class Drop_The_Ball : MonoBehaviour
         }
     }
 
-    private void FixSnowball()
+    private void FixSnowball(Vector3 collisionPoint)
     {
         snow.rB.isKinematic = true;
         snow.rB.useGravity = false;
@@ -69,5 +71,7 @@ public class Drop_The_Ball : MonoBehaviour
             SnowmanBuilder.Instance.HighestSnowmanHeight = transform.position.y;
         }
         SnowmanBuilder.Instance.BackToGameAfterSeconds(3f);
+
+        var effect = Instantiate(hitEffect, collisionPoint, Quaternion.identity);
     }
 }
