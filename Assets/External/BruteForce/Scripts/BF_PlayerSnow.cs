@@ -21,6 +21,8 @@ public class BF_PlayerSnow : MonoBehaviour
     public Transform StiatcVictimTransformParent;
     public Transform GrowthVictimTransformParent;
 
+    public Drop_The_Ball ddb;
+
     // (GameObject, InitialDepth)
     private List<(Victim, float)> StaticVictimList = new List<(Victim, float)>();
     private List<(Victim, float)> PendingRemoveStaticVictimList = new List<(Victim, float)>();

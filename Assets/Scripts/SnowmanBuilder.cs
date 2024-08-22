@@ -99,6 +99,8 @@ public class SnowmanBuilder : MonoBehaviour
         BF_PlayerSnow.Instance.transform.SetParent(SnowmanDropper.transform.parent, true);
         BF_PlayerSnow.Instance.rB.isKinematic = false;
 
+        BF_PlayerSnow.Instance.ddb.enabled = true;
+
         if (BF_PlayerSnow.Instance.index == 0)
         {
             DropperMoveSpeed = OriginalDropperMoveSpeed;

@@ -4,27 +4,43 @@ using UnityEngine;
 
 public class Drop_The_Ball : MonoBehaviour
 {
+    public static Drop_The_Ball Instance;
+    public BF_PlayerSnow snow;
+
+    void Start()
+    {
+        Instance = this;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
+        if (!enabled)
+        {
+            return;
+        }
+
         if (collision.gameObject.CompareTag("Floor"))
         {
             // FIrst SnOWBalL is Safe
-            if (GetComponent<BF_PlayerSnow>().index == 0)
+            if (snow.index == 0)
             {
-                GetComponent<BF_PlayerSnow>().rB.isKinematic = true;
+                snow.rB.isKinematic = true;
+                snow.rB.useGravity = false;
+                enabled = false;
                 return;
             }
 
+            enabled = false;
             // /execute BOOM -CODE -hEre
             return;
         }
 
-        var snow = collision.gameObject.GetComponent<BF_PlayerSnow>();
-        if (snow)
+        var otherSnow = collision.gameObject.GetComponent<BF_PlayerSnow>();
+        if (otherSnow)
         {
-            var radius = snow.sphereColider.radius * snow.sphereColider.transform.localScale.x;
+            var radius = otherSnow.sphereColider.radius * otherSnow.sphereColider.transform.localScale.x;
             var dropPos = new Vector2(transform.position.x, transform.position.z);
-            var underPos = new Vector2(snow.transform.position.x, snow.transform.position.z);
+            var underPos = new Vector2(otherSnow.transform.position.x, otherSnow.transform.position.z);
 
             var distance = Vector2.Distance(dropPos, underPos);
             var isSafe = distance <= radius;
@@ -34,9 +50,12 @@ public class Drop_The_Ball : MonoBehaviour
             if (isSafe)
             {
                 snow.rB.isKinematic = true;
+                snow.rB.useGravity = false;
+                enabled = false;
             }
             else
             {
+                enabled = false;
                 // GOM - MUN - GOM - MUN and Boom on collide with floor.
                 return;
             }

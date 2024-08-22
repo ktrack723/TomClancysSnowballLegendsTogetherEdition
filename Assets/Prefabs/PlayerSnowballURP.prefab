@@ -4915,6 +4915,7 @@ GameObject:
   - component: {fileID: 6983352896137051452}
   - component: {fileID: 6983352896137051451}
   - component: {fileID: 6983352896137051450}
+  - component: {fileID: 4074999945035266678}
   m_Layer: 0
   m_Name: PlayerSnowballURP
   m_TagString: Untagged
@@ -5065,6 +5066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb1cf2caeea15a641a9b68e147daa302, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index: 0
   playerCollider: {fileID: 6983352896513281707}
   sphereColider: {fileID: 6983352896513281707}
   particleSys: {fileID: 917466326099221627}
@@ -5073,6 +5075,21 @@ MonoBehaviour:
   playerMatIce: {fileID: 13400000, guid: 672f836d4d8b17041a8cddfb76d71d7e, type: 2}
   StiatcVictimTransformParent: {fileID: 8560874507196655670}
   GrowthVictimTransformParent: {fileID: 891257453105368715}
+  ddb: {fileID: 4074999945035266678}
+  rB: {fileID: 0}
+--- !u!114 &4074999945035266678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6983352896137051448}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7570bc0becfac064e912ace9d532ce68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snow: {fileID: 6983352896137051450}
 --- !u!1 &6983352896513281705
 GameObject:
   m_ObjectHideFlags: 0
