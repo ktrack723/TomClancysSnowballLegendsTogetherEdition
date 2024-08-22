@@ -47,6 +47,10 @@ public class TimerUI : MonoBehaviour
         }
         else
         {
+            if (snowManText.gameObject.activeSelf == false)
+            {
+                return;
+            }
             TMPro.text = $"Time Over!";
             EndGame();
             snowManText.gameObject.SetActive(false);
