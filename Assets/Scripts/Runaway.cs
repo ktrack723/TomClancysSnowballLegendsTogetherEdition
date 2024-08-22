@@ -17,6 +17,7 @@ public class Runaway : MonoBehaviour
     private Victim victim;
 
     public bool RandomJump;
+    public float runawayInterval;
 
     private float runawayTimer;
 
@@ -55,7 +56,7 @@ public class Runaway : MonoBehaviour
         //    currentDirection = directionFromPlayer;
         //}
 
-        if (runawayTimer > 7)
+        if (runawayTimer > runawayInterval)
         {
             AvoidPlayer();
             runawayTimer = 0;

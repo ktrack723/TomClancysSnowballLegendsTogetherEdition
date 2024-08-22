@@ -507,6 +507,8 @@ MonoBehaviour:
   wallDetectionRange: 5
   turnSpeed: 1.5
   wallAvoidanceStrength: 10
+  RandomJump: 0
+  runawayInterval: 5
 --- !u!114 &3197993550904281548
 MonoBehaviour:
   m_ObjectHideFlags: 0

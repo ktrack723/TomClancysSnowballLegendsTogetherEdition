@@ -89,13 +89,13 @@ public class BF_PlayerSnow : MonoBehaviour
             //GrowthVictimList.Add((victim, victim.transform.localScale));
             //collision.gameObject.transform.SetParent(GrowthVictimTransformParent, true);
 
-            //float snowballRadius = sphereColider.radius * transform.localScale.x;
-            //ContactPoint contactPoint = collision.contacts[0];
-            //Vector3 directionToContact = (contactPoint.point - transform.position).normalized;
-            //Vector3 newVictimPosition = transform.position + directionToContact * snowballRadius;
+            float snowballRadius = sphereColider.radius * transform.localScale.x;
+            ContactPoint contactPoint = collision.contacts[0];
+            Vector3 directionToContact = (contactPoint.point - transform.position).normalized;
+            Vector3 newVictimPosition = transform.position + directionToContact * snowballRadius;
 
-            //// Set victim's position to the calculated position
-            //victim.transform.position = newVictimPosition;
+            // Set victim's position to the calculated position
+            victim.transform.position = newVictimPosition;
 
             collision.gameObject.transform.SetParent(sphereColider.transform, true);
         }
