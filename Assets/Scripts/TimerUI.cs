@@ -9,11 +9,12 @@ public class TimerUI : MonoBehaviour
     public float RemainTimeSeconds;
 
     public bool timerStop = false;
+    public TextMeshPro snowManText;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        snowManText = GameObject.Find("SnowmanText").GetComponent<TextMeshPro>();
     }
 
     // Update is called once per frame
@@ -41,6 +42,7 @@ public class TimerUI : MonoBehaviour
         else
         {
             TMPro.text = $"Time Over!";
+            snowManText.gameObject.SetActive(false);
         }
     }
 }
