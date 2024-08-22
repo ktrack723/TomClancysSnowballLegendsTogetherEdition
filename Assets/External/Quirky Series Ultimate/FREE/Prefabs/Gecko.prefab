@@ -410,9 +410,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6842458599697738422}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3181546861847413592}
@@ -537,7 +537,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!114 &7696138344690385979
 MonoBehaviour:
@@ -556,6 +556,9 @@ MonoBehaviour:
   detectionRange: 10
   wallDetectionRange: 5
   turnSpeed: 2
+  wallAvoidanceStrength: 10
+  RandomJump: 0
+  runawayInterval: 7
 --- !u!1 &7657876676996022963
 GameObject:
   m_ObjectHideFlags: 0
