@@ -8,6 +8,8 @@ using UnityEngine.InputSystem;
 
 public class BF_PlayerMovement : MonoBehaviour
 {
+    public static BF_PlayerMovement Instance;
+
     public Camera cam;
     private Rigidbody rb;
     private Quaternion camRot;
@@ -16,6 +18,11 @@ public class BF_PlayerMovement : MonoBehaviour
 
     public float torqueSpeed;
     public float rollSpeed;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()

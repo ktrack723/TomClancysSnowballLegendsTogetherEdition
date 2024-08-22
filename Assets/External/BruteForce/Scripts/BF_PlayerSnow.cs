@@ -24,7 +24,7 @@ public class BF_PlayerSnow : MonoBehaviour
     // (GameObject, originalScale)
     private List<(Victim, Vector3)> GrowthVictimList = new List<(Victim, Vector3)>();
 
-    private Rigidbody rB;
+    public Rigidbody rB;
     private float speedMult = 1;
     private float lerpIce = 0;
     private MeshCollider oldMC = null;
