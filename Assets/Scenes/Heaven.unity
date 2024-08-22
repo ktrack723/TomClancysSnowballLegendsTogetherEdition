@@ -1466,10 +1466,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1051630500032491944, guid: 4aa01f1d5c72d4e47a8c44e612a6b6fc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1342889782683910774, guid: 4aa01f1d5c72d4e47a8c44e612a6b6fc,
         type: 3}
       propertyPath: m_Name
       value: Herring
+      objectReference: {fileID: 0}
+    - target: {fileID: 1588220492614268933, guid: 4aa01f1d5c72d4e47a8c44e612a6b6fc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1604981034209185665, guid: 4aa01f1d5c72d4e47a8c44e612a6b6fc,
         type: 3}
@@ -1536,12 +1546,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -16.034
       objectReference: {fileID: 0}
+    - target: {fileID: 7294705961582741534, guid: 4aa01f1d5c72d4e47a8c44e612a6b6fc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7741724734492770376, guid: 4aa01f1d5c72d4e47a8c44e612a6b6fc,
         type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 989048419534469365, guid: 4aa01f1d5c72d4e47a8c44e612a6b6fc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -2496,6 +2512,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gecko
       objectReference: {fileID: 0}
+    - target: {fileID: 7696138344690385979, guid: cefda5744f2acb54d8f08973a10bee1e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7979196013395532419, guid: cefda5744f2acb54d8f08973a10bee1e,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -2566,7 +2587,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8723135426082100990, guid: cefda5744f2acb54d8f08973a10bee1e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9039528782404784029, guid: cefda5744f2acb54d8f08973a10bee1e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2211789478597160345, guid: cefda5744f2acb54d8f08973a10bee1e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

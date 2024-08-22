@@ -97,7 +97,7 @@ public class Runaway : MonoBehaviour
         {
             if (hit.collider.CompareTag("Wall"))
             {
-                Debug.Log("sd");
+                //Debug.Log("sd");
 
                 // ???? ???????? ?? ???? ?????? ???????? ????
                 Vector3 avoidanceDirection = Quaternion.Euler(0, 90 * randomDirection, 0) * currentDirection;
