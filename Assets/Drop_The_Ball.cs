@@ -24,11 +24,7 @@ public class Drop_The_Ball : MonoBehaviour
             // FIrst SnOWBalL is Safe
             if (snow.index == 0)
             {
-                snow.rB.isKinematic = true;
-                snow.rB.useGravity = false;
-                enabled = false;
-
-                SnowmanBuilder.Instance.BackToGameAfterSeconds(3f);
+                FixSnowball();
                 return;
             }
 
@@ -51,11 +47,7 @@ public class Drop_The_Ball : MonoBehaviour
 
             if (isSafe)
             {
-                snow.rB.isKinematic = true;
-                snow.rB.useGravity = false;
-                enabled = false;
-
-                SnowmanBuilder.Instance.BackToGameAfterSeconds(3f);
+                FixSnowball();
             }
             else
             {
@@ -64,5 +56,18 @@ public class Drop_The_Ball : MonoBehaviour
                 return;
             }
         }
+    }
+
+    private void FixSnowball()
+    {
+        snow.rB.isKinematic = true;
+        snow.rB.useGravity = false;
+        enabled = false;
+
+        if (transform.position.y > SnowmanBuilder.Instance.HighestSnowmanHeight)
+        {
+            SnowmanBuilder.Instance.HighestSnowmanHeight = transform.position.y;
+        }
+        SnowmanBuilder.Instance.BackToGameAfterSeconds(3f);
     }
 }
