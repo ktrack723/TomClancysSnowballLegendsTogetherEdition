@@ -81,18 +81,17 @@ public class BF_PlayerSnow : MonoBehaviour
         }
 
         Victim victim = collision.gameObject.GetComponent<Victim>();
-        if (victim != null)
+        if (victim != null && victim.IsCaught == false)
         {
             victim.IsCaught = true;
-            victim.rigidbody.isKinematic = true;
+            Destroy(victim.rigidbody);
+            //victim.rigidbody.isKinematic = true;
             StaticVictimList.Add((victim, sphereColider.radius * sphereColider.transform.localScale.x));
             //GrowthVictimList.Add((victim, victim.transform.localScale));
             //collision.gameObject.transform.SetParent(GrowthVictimTransformParent, true);
 
-            float snowballRadius = sphereColider.radius * transform.localScale.x;
-            ContactPoint contactPoint = collision.contacts[0];
-            Vector3 directionToContact = (contactPoint.point - transform.position).normalized;
-            Vector3 newVictimPosition = transform.position + directionToContact * snowballRadius;
+            Vector3 directionToContact = (collision.transform.position - transform.position).normalized;
+            Vector3 newVictimPosition = transform.position + directionToContact * sphereColider.transform.localScale.x / 1.75f;
 
             // Set victim's position to the calculated position
             victim.transform.position = newVictimPosition;

@@ -15,6 +15,8 @@ public class SnowmanBuilder : MonoBehaviour
     public Transform SnowmanDropTransformRight;
     public GameObject SnowmanDropper;
 
+    public SmoothCameraFollow cameraFollow;
+
     public float DropperMoveSpeed;
 
     private float OriginalDropperMoveSpeed;
@@ -38,7 +40,7 @@ public class SnowmanBuilder : MonoBehaviour
         var player = Instantiate(PlayerPrefab);
         player.transform.position = PlayerSpawnParent.transform.position;
 
-        SmoothCameraFollow.Instance.target = player.transform;
+        cameraFollow.target = player.transform;
     }
 
     public void EnterBuilderMode()

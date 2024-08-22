@@ -2,16 +2,9 @@ using UnityEngine;
 
 public class SmoothCameraFollow : MonoBehaviour
 {
-    public static SmoothCameraFollow Instance;
-
     public Transform target;        // The target object that the camera will follow
     public float smoothSpeed = 0.125f;  // The speed at which the camera will smooth
     public Vector3 offset;          // The offset distance between the camera and the target
-
-    private void Awake()
-    {
-        Instance = this;
-    }
 
     void LateUpdate()
     {

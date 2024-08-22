@@ -21,6 +21,8 @@ public class Runaway : MonoBehaviour
 
     private float runawayTimer;
 
+    private int randomDirection = 1;
+
     void Start()
     {
         player = BF_PlayerSnow.Instance.transform;
@@ -34,6 +36,11 @@ public class Runaway : MonoBehaviour
 
         // ?????? ?? ?????? ???????? ????
         AvoidPlayer();
+
+        if (Random.Range(0f, 1f) > 0.5f)
+        {
+            randomDirection *= -1;
+        }
     }
 
     void FixedUpdate()
@@ -93,7 +100,7 @@ public class Runaway : MonoBehaviour
                 Debug.Log("sd");
 
                 // ???? ???????? ?? ???? ?????? ???????? ????
-                Vector3 avoidanceDirection = Quaternion.Euler(0, 90, 0) * currentDirection;
+                Vector3 avoidanceDirection = Quaternion.Euler(0, 90 * randomDirection, 0) * currentDirection;
                 //currentDirection = Vector3.Lerp(currentDirection, avoidanceDirection.normalized, Time.deltaTime * wallAvoidanceStrength);
                 currentDirection = avoidanceDirection;
 
