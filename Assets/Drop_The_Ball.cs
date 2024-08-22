@@ -24,7 +24,7 @@ public class Drop_The_Ball : MonoBehaviour
         if (collision.gameObject.CompareTag("Floor"))
         {
             // FIrst SnOWBalL is Safe
-            if (snow.index == 0)
+            if (SnowmanBuilder.Instance.BuiltSnowballList.Count == 0)
             {
                 FixSnowball(collision.contacts[0].point);
                 return;
@@ -70,7 +70,7 @@ public class Drop_The_Ball : MonoBehaviour
         {
             SnowmanBuilder.Instance.HighestSnowmanHeight = transform.position.y;
         }
-        SnowmanBuilder.Instance.BackToGameAfterSeconds(3f);
+        SnowmanBuilder.Instance.BackToGameAfterSeconds(2f);
 
         var effect = Instantiate(hitEffect, collisionPoint, Quaternion.identity);
 

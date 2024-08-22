@@ -89,7 +89,7 @@ public class SnowmanBuilder : MonoBehaviour
 
         OriginalDropperMoveSpeed = DropperMoveSpeed;
 
-        if (BF_PlayerSnow.Instance.index == 0)
+        if (BuiltSnowballList.Count == 0)
         {
             DropperMoveSpeed = 0;
         }
@@ -158,7 +158,7 @@ public class SnowmanBuilder : MonoBehaviour
 
         BF_PlayerSnow.Instance.ddb.enabled = true;
 
-        if (BF_PlayerSnow.Instance.index == 0)
+        if (BuiltSnowballList.Count == 0)
         {
             DropperMoveSpeed = OriginalDropperMoveSpeed;
         }
@@ -189,10 +189,16 @@ public class SnowmanBuilder : MonoBehaviour
 
         yield return new WaitForSeconds(1.1f);
 
-        foreach (var obj in BuiltSnowballList)
+        for (int i = BuiltSnowballList.Count - 1; i >= 0; i--)
         {
-            obj.BoomSnowball();
+            BuiltSnowballList[i].BoomSnowball();
             yield return new WaitForSeconds(0.25f);
         }
+        BuiltSnowballList.Clear();
+
+        yield return new WaitForSeconds(2.5f);
+
+        HighestSnowmanHeight = 0;
+        BackToGame();
     }
 }
