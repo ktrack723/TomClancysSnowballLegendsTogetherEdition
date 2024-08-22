@@ -5065,7 +5065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCollider: {fileID: 6983352896513281707}
-  sphereColider: {fileID: 0}
+  sphereColider: {fileID: 6983352896513281707}
   particleSys: {fileID: 917466326099221627}
   playerMatDefault: {fileID: 13400000, guid: bbd172ead790a1a43a763ae897779c7e, type: 2}
   playerMatSnow: {fileID: 13400000, guid: a070e9ef90b216941808cf33c017197d, type: 2}
