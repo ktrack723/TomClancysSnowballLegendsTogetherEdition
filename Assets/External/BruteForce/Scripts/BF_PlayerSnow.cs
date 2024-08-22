@@ -126,11 +126,7 @@ public class BF_PlayerSnow : MonoBehaviour
             collision.gameObject.transform.SetParent(sphereColider.transform, true);
 
             int index = (int)System.Enum.Parse(typeof(EAnimals), collision.gameObject.name);
-            string tempText = counters[index].text;
-            string lastNumber = "" + tempText[tempText.Length - 1];
-            int lastChar = System.Int32.Parse(lastNumber);
-            lastChar += 1;
-            counters[index].text = ((EAnimals)index).ToString() + " : " + lastChar;
+            counters[index].fontStyle |= FontStyles.Strikethrough;
         }
     }
 
