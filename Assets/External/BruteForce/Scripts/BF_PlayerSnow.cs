@@ -6,6 +6,9 @@ using UnityEngine;
 public class BF_PlayerSnow : MonoBehaviour
 {
     public static BF_PlayerSnow Instance;
+    private static int ID_Generator = 0;
+
+    public int index;
 
     public Collider playerCollider;
     public SphereCollider sphereColider;
@@ -36,6 +39,8 @@ public class BF_PlayerSnow : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        index = ID_Generator;
+        ID_Generator++;
     }
 
     // Start is called before the first frame update

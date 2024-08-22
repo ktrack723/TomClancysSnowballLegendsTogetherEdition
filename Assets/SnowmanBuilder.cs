@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class SnowmanBuilder : MonoBehaviour
 {
+    public static SnowmanBuilder Instance;
+
     public GameObject PlayerPrefab;
     public Transform PlayerSpawnParent;
 
@@ -20,13 +22,13 @@ public class SnowmanBuilder : MonoBehaviour
     public float DropperMoveSpeed;
 
     private float OriginalDropperMoveSpeed;
-    private int SnowBallIndex = 0;
 
     private bool InBuildMode = false;
     private bool IsDropped = false;
 
     private void Awake()
     {
+        Instance = this;
         BackToGame();
     }
 
@@ -60,7 +62,7 @@ public class SnowmanBuilder : MonoBehaviour
 
         OriginalDropperMoveSpeed = DropperMoveSpeed;
 
-        if (SnowBallIndex == 0)
+        if (BF_PlayerSnow.Instance.index == 0)
         {
             DropperMoveSpeed = 0;
         }
@@ -97,11 +99,9 @@ public class SnowmanBuilder : MonoBehaviour
         BF_PlayerSnow.Instance.transform.SetParent(SnowmanDropper.transform.parent, true);
         BF_PlayerSnow.Instance.rB.isKinematic = false;
 
-        if (SnowBallIndex == 0)
+        if (BF_PlayerSnow.Instance.index == 0)
         {
             DropperMoveSpeed = OriginalDropperMoveSpeed;
         }
-
-        SnowBallIndex++;
     }
 }
