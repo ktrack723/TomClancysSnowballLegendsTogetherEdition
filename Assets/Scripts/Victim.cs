@@ -52,7 +52,7 @@ public class Victim : MonoBehaviour
 
         if (AnimalManager.Instance.VictimList.Count == 0)
         {
-            // end
+            GameObject.Find("TimerText").GetComponent<TimerUI>().EndGame();
         }
     }
 }

@@ -64,6 +64,11 @@ public class SnowmanBuilder : MonoBehaviour
 
         cameraFollow.target = player.transform;
 
+        if (AnimalManager.Instance == null)
+        {
+            return;
+        }
+
         foreach (var obj in AnimalManager.Instance.VictimList)
         {
             obj.runaway.player = player.transform;
@@ -216,7 +221,7 @@ public class SnowmanBuilder : MonoBehaviour
         Vector3 startPosition = transform.position;
         Vector3 endPosition = startPosition - new Vector3(0, HighestSnowmanHeight, 0);
 
-        // 이동에 걸리는 시간
+        // ?????? ?????? ????
         float elapsedTime = 0f;
         float duration = 0.25f * BuiltSnowballList.Count;
 
@@ -224,17 +229,17 @@ public class SnowmanBuilder : MonoBehaviour
 
         while (elapsedTime < duration)
         {
-            // 비율 계산
+            // ???? ????
             float t = elapsedTime / duration;
-            // 위치 보간
+            // ???? ????
             transform.position = Vector3.Lerp(startPosition, endPosition, t);
 
-            // 시간 증가
+            // ???? ????
             elapsedTime += Time.deltaTime;
-            yield return null; // 다음 프레임까지 대기
+            yield return null; // ???? ?????????? ????
         }
 
-        // 최종 위치 설정 (정확한 위치 도달을 보장)
+        // ???? ???? ???? (?????? ???? ?????? ????)
         transform.position = endPosition;
     }
 }
