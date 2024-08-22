@@ -5,11 +5,21 @@ using UnityEngine;
 public class BF_PlayerSnow : MonoBehaviour
 {
     public Collider playerCollider;
+    public SphereCollider sphereColider;
     public ParticleSystem particleSys;
 
     public PhysicMaterial playerMatDefault;
     public PhysicMaterial playerMatSnow;
     public PhysicMaterial playerMatIce;
+
+    public Transform StiatcVictimTransformParent;
+    public Transform GrowthVictimTransformParent;
+
+    // (GameObject, InitialDepth)
+    private List<(Victim, float)> StaticVictimList = new List<(Victim, float)>();
+    private List<(Victim, float)> PendingRemoveStaticVictimList = new List<(Victim, float)>();
+    // (GameObject, originalScale)
+    private List<(Victim, Vector3)> GrowthVictimList = new List<(Victim, Vector3)>();
 
     private Rigidbody rB;
     private float speedMult = 1;
@@ -58,7 +68,7 @@ public class BF_PlayerSnow : MonoBehaviour
     {
         if (lerpIce >= 0.925f && collision.collider.gameObject.layer == 4)
         {
-            AddSnow(1.5f);
+            AddSnow(6);
         }
         else
         {
@@ -71,6 +81,13 @@ public class BF_PlayerSnow : MonoBehaviour
         if(collision.impulse.magnitude>10)
         {
            // RemoveSnow(20);
+        }
+
+        Victim victim = collision.gameObject.GetComponent<Victim>();
+        if (victim != null)
+        {
+            StaticVictimList.Add((victim, sphereColider.radius * sphereColider.transform.localScale.x));
+            collision.gameObject.transform.SetParent(StiatcVictimTransformParent, true);
         }
     }
 
@@ -152,5 +169,29 @@ public class BF_PlayerSnow : MonoBehaviour
     {
         rB.mass = Mathf.Lerp(1.95f, 2.5f, (playerCollider.transform.localScale.x-1.2f) / 7);
         pSMain.startSize = playerCollider.transform.localScale.x+0.5f;
+
+        GrowthVictimTransformParent.localScale = playerCollider.transform.localScale;
+        foreach (var obj in GrowthVictimList)
+        {
+            obj.Item1.transform.localScale = obj.Item2 / GrowthVictimTransformParent.localScale.x;
+        }
+
+        var rad = sphereColider.radius * sphereColider.transform.localScale.x;
+        foreach (var obj in StaticVictimList)
+        {
+            if (rad >= obj.Item2 + obj.Item1.collider.bounds.size.x / 3)
+            {
+                GrowthVictimList.Add((obj.Item1, obj.Item1.gameObject.transform.localScale));
+                obj.Item1.gameObject.transform.SetParent(GrowthVictimTransformParent, true);
+
+                PendingRemoveStaticVictimList.Add(obj);
+            }
+        }
+
+        foreach (var obj in PendingRemoveStaticVictimList)
+        {
+            StaticVictimList.Remove(obj);
+        }
+        PendingRemoveStaticVictimList.Clear();
     }
 }
