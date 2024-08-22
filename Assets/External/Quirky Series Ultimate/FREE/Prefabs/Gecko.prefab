@@ -494,9 +494,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.21
-  m_Height: 1.42
+  m_Height: 1.01
   m_Direction: 2
-  m_Center: {x: 0, y: 0.2, z: -0.12}
+  m_Center: {x: 0, y: 0.2, z: 0.12}
 --- !u!114 &9039528782404784029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,6 +511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collider: {fileID: 0}
   rigidbody: {fileID: 0}
+  IsCaught: 0
 --- !u!54 &2211789478597160345
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -554,7 +555,7 @@ MonoBehaviour:
   speed: 3
   detectionRange: 10
   wallDetectionRange: 5
-  turnSpeed: 5
+  turnSpeed: 2
 --- !u!1 &7657876676996022963
 GameObject:
   m_ObjectHideFlags: 0
