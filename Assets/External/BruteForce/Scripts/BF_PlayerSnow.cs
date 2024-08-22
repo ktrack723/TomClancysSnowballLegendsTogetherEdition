@@ -86,7 +86,18 @@ public class BF_PlayerSnow : MonoBehaviour
             victim.IsCaught = true;
             Destroy(victim.rigidbody);
             StaticVictimList.Add((victim, sphereColider.radius * sphereColider.transform.localScale.x));
-            collision.gameObject.transform.SetParent(StiatcVictimTransformParent, true);
+            //GrowthVictimList.Add((victim, victim.transform.localScale));
+            //collision.gameObject.transform.SetParent(GrowthVictimTransformParent, true);
+
+            //float snowballRadius = sphereColider.radius * transform.localScale.x;
+            //ContactPoint contactPoint = collision.contacts[0];
+            //Vector3 directionToContact = (contactPoint.point - transform.position).normalized;
+            //Vector3 newVictimPosition = transform.position + directionToContact * snowballRadius;
+
+            //// Set victim's position to the calculated position
+            //victim.transform.position = newVictimPosition;
+
+            collision.gameObject.transform.SetParent(sphereColider.transform, true);
         }
     }
 
@@ -123,7 +134,7 @@ public class BF_PlayerSnow : MonoBehaviour
 
     private void FixedUpdate()
     {
-        ChangePlayerMass();
+        //ChangePlayerMass();
         CheckSnowUnderneath();
         if (rB.velocity.magnitude < 0.5f)
         {
@@ -183,30 +194,30 @@ public class BF_PlayerSnow : MonoBehaviour
             obj.Item1.transform.localScale = obj.Item2 / GrowthVictimTransformParent.localScale.x;
         }
 
-        var rad = sphereColider.radius * sphereColider.transform.localScale.x;
-        foreach (var obj in StaticVictimList)
-        {
-            if (rad >= obj.Item2 + obj.Item1.collider.bounds.size.x / 3)
-            {
-                GrowthVictimList.Add((obj.Item1, obj.Item1.gameObject.transform.localScale));
-                obj.Item1.gameObject.transform.SetParent(GrowthVictimTransformParent, true);
+        //var rad = sphereColider.radius * sphereColider.transform.localScale.x;
+        //foreach (var obj in StaticVictimList)
+        //{
+        //    if (rad >= obj.Item2 + obj.Item1.collider.bounds.size.x / 3)
+        //    {
+        //        GrowthVictimList.Add((obj.Item1, obj.Item1.gameObject.transform.localScale));
+        //        obj.Item1.gameObject.transform.SetParent(GrowthVictimTransformParent, true);
 
-                PendingRemoveStaticVictimList.Add(obj);
-            }
-        }
+        //        PendingRemoveStaticVictimList.Add(obj);
+        //    }
+        //}
 
-        foreach (var obj in PendingRemoveStaticVictimList)
-        {
-            StaticVictimList.Remove(obj);
-        }
-        PendingRemoveStaticVictimList.Clear();
+        //foreach (var obj in PendingRemoveStaticVictimList)
+        //{
+        //    StaticVictimList.Remove(obj);
+        //}
+        //PendingRemoveStaticVictimList.Clear();
     }
 
     public List<Victim> GetAllAttachedVictims()
     {
         var res = new List<Victim>(StaticVictimList.Count + GrowthVictimList.Count);
         res.AddRange(StaticVictimList.Select(obj => obj.Item1));
-        res.AddRange(GrowthVictimList.Select(obj => obj.Item1));
+        //res.AddRange(GrowthVictimList.Select(obj => obj.Item1));
 
         return res;
     }
