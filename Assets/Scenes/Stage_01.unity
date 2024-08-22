@@ -30011,6 +30011,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1056153993}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &723266877
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 723266878}
+  m_Layer: 0
+  m_Name: CompleteSnowman
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &723266878
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723266877}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &731277168 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8758888183437201531, guid: 2caeb99d3229fee4aa4f3bc8c1c8fc07,
@@ -51722,6 +51753,11 @@ PrefabInstance:
       propertyPath: PlayerSpawnParent
       value: 
       objectReference: {fileID: 1391915355}
+    - target: {fileID: 8198811886697054444, guid: 1ee7cafc0d6d7e04e96f583e0a3f4b04,
+        type: 3}
+      propertyPath: SnowmanFixedTransform
+      value: 
+      objectReference: {fileID: 723266878}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -51820,6 +51856,7 @@ SceneRoots:
   - {fileID: 67563414}
   - {fileID: 1410396224}
   - {fileID: 7219271938913215241}
+  - {fileID: 723266878}
   - {fileID: 1391915355}
   - {fileID: 579486551}
   - {fileID: 439299691}
