@@ -254,7 +254,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AddSnowStrength: 0.5
+    - _AddSnowStrength: 1.49
     - _BumpScale: 3.44
     - _Cutoff: 0.361
     - _DetailBumpScale: 3.07
@@ -303,7 +303,7 @@ Material:
     - _Metallic7: 0
     - _Mode: 0
     - _NormalMultiplier: 0.66
-    - _NormalRTDepth: 0.12
+    - _NormalRTDepth: 1.25
     - _NormalRTStrength: 2.2
     - _NormalScale: 0.766
     - _NormalScale0: 1
@@ -326,7 +326,7 @@ Material:
     - _ProceduralStrength: 1.5
     - _ReflectionOpacity: 0.25
     - _ReflectionStrength: 0.07
-    - _RemoveSnowStrength: 0.5
+    - _RemoveSnowStrength: 1.49
     - _RoughnessStrength: 1.75
     - _Shininess: 17.3
     - _ShininessIce: 10
@@ -364,7 +364,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 0, g: 0.65999997, b: 0.73, a: 1}
-    - _BotColor: {r: 0.709, g: 0.8791104, b: 1, a: 1}
+    - _BotColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0.7139551, g: 0.76353264, b: 0.7924528, a: 1}
     - _CracksStrength: {r: -1.04, g: 0.125, b: 0.13, a: 0.1}
     - _Emission: {r: 0, g: 0, b: 0, a: 1}

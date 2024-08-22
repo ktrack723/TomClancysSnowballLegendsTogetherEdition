@@ -259,7 +259,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AddSnowStrength: 0.5
+    - _AddSnowStrength: 1.06
     - _BumpScale: 3.44
     - _Cutoff: 0.361
     - _DetailBumpScale: 3.07
@@ -308,8 +308,8 @@ Material:
     - _Metallic7: 0
     - _Mode: 0
     - _NormalMultiplier: 0.3
-    - _NormalRTDepth: 0.18
-    - _NormalRTStrength: 3.2
+    - _NormalRTDepth: 1.29
+    - _NormalRTStrength: 1.92
     - _NormalScale: 0.4
     - _NormalScale0: 1
     - _NormalScale1: 1
@@ -331,7 +331,7 @@ Material:
     - _ProceduralStrength: 1.5
     - _ReflectionOpacity: 0.3
     - _ReflectionStrength: 0.3
-    - _RemoveSnowStrength: 0.4
+    - _RemoveSnowStrength: 1.06
     - _RoughnessStrength: 1.75
     - _Shininess: 17.3
     - _ShininessIce: 10
@@ -339,7 +339,7 @@ Material:
     - _Smoothness: 0.817
     - _SmoothnessTextureChannel: 0
     - _SnowNormalScale: 1
-    - _SnowScale: 1
+    - _SnowScale: 3
     - _SpecForce: 3
     - _SpecGlossMap: 1
     - _Specular: -7.29
@@ -369,7 +369,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 0, g: 0.65999997, b: 0.73, a: 1}
-    - _BotColor: {r: 0.49120805, g: 0.6657473, b: 0.84400004, a: 1}
+    - _BotColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0.851, g: 0.9461063, b: 1, a: 1}
     - _CracksStrength: {r: -1.04, g: 0.125, b: -0.13, a: 0.1}
     - _Emission: {r: 0, g: 0, b: 0, a: 1}
@@ -377,7 +377,7 @@ Material:
     - _FogDirection: {r: 1, g: 0.3, b: 2, a: 0}
     - _IceTint: {r: 0.21978344, g: 0.34459865, b: 0.426, a: 0.9372549}
     - _IceTrail: {r: 0.4056604, g: 0.17573498, b: 0.017443415, a: 1}
-    - _MountColor: {r: 0.156, g: 0.156, b: 0.156, a: 1}
+    - _MountColor: {r: 1, g: 1, b: 1, a: 1}
     - _ParalaxColor: {r: 0, g: 0, b: 0, a: 1}
     - _ParallaxColor: {r: 1, g: 1, b: 1, a: 1}
     - _ParallaxStrength: {r: 0, g: 0.125, b: -0.13, a: 0.1}

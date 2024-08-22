@@ -14,6 +14,9 @@ public class BF_PlayerMovement : MonoBehaviour
     private Vector3 moveDirection;
     private Vector3 inputDirection;
 
+    public float torqueSpeed;
+    public float rollSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,21 +57,21 @@ public class BF_PlayerMovement : MonoBehaviour
             inputDirection += new Vector3(-1, 0, 0);
         }
 #else
-        if (Input.GetKey(KeyCode.Q)|| Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
-            inputDirection += new Vector3(0, 0, 1);
+            inputDirection += Vector3.left;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            inputDirection += new Vector3(0, 0, -1);
+            inputDirection += Vector3.right;
         }
-        if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
         {
-            inputDirection += new Vector3(1, 0, 0);
+            inputDirection += Vector3.forward;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            inputDirection += new Vector3(-1, 0, 0);
+            inputDirection += Vector3.back;
         }
 #endif
         MoveBall();
@@ -77,8 +80,7 @@ public class BF_PlayerMovement : MonoBehaviour
     private void MoveBall()
     {
         camRot = Quaternion.LookRotation(cam.transform.forward, Vector3.up);
-        moveDirection = camRot * new Vector3(Mathf.Clamp(inputDirection.x * 2, -1, 1), 0, Mathf.Clamp(inputDirection.z * 2, -1, 1));
-        rb.AddTorque(moveDirection*22.5f);
-        rb.AddForce(moveDirection*15f,ForceMode.Force);
+        rb.AddTorque(new Vector3(inputDirection.z, 0, -inputDirection.x) * torqueSpeed);
+        rb.AddForce(inputDirection * rollSpeed, ForceMode.Force);
     }
 }
