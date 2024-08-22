@@ -1323,7 +1323,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Bird : 0'
+  m_text: Bird
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 693d869b6e95c421fa9170c0067b4f53, type: 2}
   m_sharedMaterial: {fileID: 1056984362963253197, guid: 693d869b6e95c421fa9170c0067b4f53,
@@ -2877,7 +2877,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Rat : 0'
+  m_text: Rat
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 693d869b6e95c421fa9170c0067b4f53, type: 2}
   m_sharedMaterial: {fileID: 1056984362963253197, guid: 693d869b6e95c421fa9170c0067b4f53,
@@ -30437,7 +30437,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Gecko : 0'
+  m_text: Gecko
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 693d869b6e95c421fa9170c0067b4f53, type: 2}
   m_sharedMaterial: {fileID: 1056984362963253197, guid: 693d869b6e95c421fa9170c0067b4f53,
@@ -31472,7 +31472,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Fish : 0'
+  m_text: Fish
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 693d869b6e95c421fa9170c0067b4f53, type: 2}
   m_sharedMaterial: {fileID: 1056984362963253197, guid: 693d869b6e95c421fa9170c0067b4f53,
@@ -31918,7 +31918,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Monkey : 0'
+  m_text: Monkey
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 693d869b6e95c421fa9170c0067b4f53, type: 2}
   m_sharedMaterial: {fileID: 1056984362963253197, guid: 693d869b6e95c421fa9170c0067b4f53,
@@ -32646,7 +32646,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Deer : 0'
+  m_text: Deer
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 693d869b6e95c421fa9170c0067b4f53, type: 2}
   m_sharedMaterial: {fileID: 1056984362963253197, guid: 693d869b6e95c421fa9170c0067b4f53,
@@ -50259,7 +50259,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Snake : 0'
+  m_text: Snake
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 693d869b6e95c421fa9170c0067b4f53, type: 2}
   m_sharedMaterial: {fileID: 1056984362963253197, guid: 693d869b6e95c421fa9170c0067b4f53,
