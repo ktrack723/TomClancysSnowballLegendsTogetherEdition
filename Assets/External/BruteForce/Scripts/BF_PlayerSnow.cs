@@ -168,7 +168,17 @@ public class BF_PlayerSnow : MonoBehaviour
     private void FixedUpdate()
     {
         //ChangePlayerMass();
+        if (transform.position.y - (sphereColider.transform.localScale.x / 2f) < 0.25f)
+        {
+            particleSys.Play();
+        }
+        else
+        {
+            particleSys.Stop();
+        }
+
         CheckSnowUnderneath();
+
         if (rB.velocity.magnitude < 0.5f)
         {
             RemoveSnow(0.2f);
