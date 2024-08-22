@@ -31,7 +31,7 @@ public class Drop_The_Ball : MonoBehaviour
             }
 
             enabled = false;
-            // /execute BOOM -CODE -hEre
+            SnowmanBuilder.Instance.BoomAllSnowball(snow);
             return;
         }
 
@@ -54,7 +54,7 @@ public class Drop_The_Ball : MonoBehaviour
             else
             {
                 enabled = false;
-                // GOM - MUN - GOM - MUN and Boom on collide with floor.
+                SnowmanBuilder.Instance.BoomAllSnowball(snow);
                 return;
             }
         }
@@ -73,5 +73,7 @@ public class Drop_The_Ball : MonoBehaviour
         SnowmanBuilder.Instance.BackToGameAfterSeconds(3f);
 
         var effect = Instantiate(hitEffect, collisionPoint, Quaternion.identity);
+
+        SnowmanBuilder.Instance.BuiltSnowballList.Add(snow);
     }
 }

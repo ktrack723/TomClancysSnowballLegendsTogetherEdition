@@ -80,6 +80,11 @@ public class Runaway : MonoBehaviour
 
     void AvoidPlayer()
     {
+        if (!player)
+        {
+            return;
+        }
+
         Vector3 directionFromPlayer = (transform.position - player.position);
         directionFromPlayer.y = 0;
         directionFromPlayer.Normalize();

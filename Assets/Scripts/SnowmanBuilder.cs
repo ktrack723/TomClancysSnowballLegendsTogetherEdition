@@ -1,6 +1,7 @@
 using AutoLetterbox;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SnowmanBuilder : MonoBehaviour
@@ -18,6 +19,8 @@ public class SnowmanBuilder : MonoBehaviour
     public Transform SnowmanDropTransformRight;
     public Transform SnowmanFixedTransform;
     public GameObject SnowmanDropper;
+
+    public List<BF_PlayerSnow> BuiltSnowballList = new List<BF_PlayerSnow>();
 
     public SmoothCameraFollow cameraFollow;
 
@@ -171,5 +174,25 @@ public class SnowmanBuilder : MonoBehaviour
         yield return new WaitForSeconds(sleepTimes);
 
         BackToGame();
+    }
+
+    public void BoomAllSnowball(BF_PlayerSnow start)
+    {
+        StartCoroutine(boomallcoroutine(start));
+    }
+
+    private IEnumerator boomallcoroutine(BF_PlayerSnow start)
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        start.BoomSnowball();
+
+        yield return new WaitForSeconds(1.1f);
+
+        foreach (var obj in BuiltSnowballList)
+        {
+            obj.BoomSnowball();
+            yield return new WaitForSeconds(0.25f);
+        }
     }
 }

@@ -80,6 +80,11 @@ public class BF_PlayerMovement : MonoBehaviour
         {
             inputDirection += Vector3.back;
         }
+
+        if (Input.GetKeyDown(KeyCode.Delete))
+        {
+            GetComponent<BF_PlayerSnow>().BoomSnowball();
+        }
 #endif
         MoveBall();
     }

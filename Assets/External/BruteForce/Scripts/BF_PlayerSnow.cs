@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class BF_PlayerSnow : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class BF_PlayerSnow : MonoBehaviour
     public Transform GrowthVictimTransformParent;
 
     public Drop_The_Ball ddb;
+
+    public GameObject boomEffect;
 
     // (GameObject, InitialDepth)
     private List<(Victim, float)> StaticVictimList = new List<(Victim, float)>();
@@ -259,5 +262,25 @@ public class BF_PlayerSnow : MonoBehaviour
         //res.AddRange(GrowthVictimList.Select(obj => obj.Item1));
 
         return res;
+    }
+
+    public void BoomSnowball()
+    {
+        var effect = Instantiate(boomEffect, transform.position, Quaternion.identity);
+
+        var list = GetAllAttachedVictims();
+        foreach (var obj in list)
+        {
+            obj.transform.SetParent(transform.parent, true);
+            obj.Kill();
+            var rb = obj.AddComponent<Rigidbody>();
+
+            var direction = obj.transform.position - transform.position;
+            direction.Normalize();
+
+            rb.AddForce(direction);
+        }
+
+        Destroy(gameObject);
     }
 }

@@ -20,7 +20,7 @@ public class Victim : MonoBehaviour
         //Kill();
     }
 
-    void Kill()
+    public void Kill()
     {
         SkinnedMeshRenderer[] skinnedMeshRenderer = GetComponentsInChildren<SkinnedMeshRenderer>();
 
@@ -36,6 +36,12 @@ public class Victim : MonoBehaviour
             {
                 Debug.LogError("Material does not have a BaseMap property.");
             }
+        }
+
+        var anim = GetComponent<Animator>();
+        if (anim)
+        {
+            anim.enabled = false;
         }
     }
 }

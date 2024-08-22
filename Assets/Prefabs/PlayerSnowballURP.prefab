@@ -5076,6 +5076,8 @@ MonoBehaviour:
   StiatcVictimTransformParent: {fileID: 8560874507196655670}
   GrowthVictimTransformParent: {fileID: 891257453105368715}
   ddb: {fileID: 4074999945035266678}
+  boomEffect: {fileID: 3911682903011316166, guid: f28ec029498a24a29b306cf874ee4408,
+    type: 3}
   rB: {fileID: 0}
   counters: []
 --- !u!114 &4074999945035266678
