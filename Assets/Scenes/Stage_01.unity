@@ -2731,6 +2731,7 @@ MonoBehaviour:
   TMPro: {fileID: 365801313}
   RemainTimeSeconds: 180
   timerStop: 0
+  snowManText: {fileID: 0}
 --- !u!1001 &376839991
 PrefabInstance:
   m_ObjectHideFlags: 0
