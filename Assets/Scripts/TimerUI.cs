@@ -33,13 +33,13 @@ public class TimerUI : MonoBehaviour
 
         RemainTimeSeconds -= Time.fixedDeltaTime;
 
-        if (RemainTimeSeconds >= 60)
+
+        var min = Mathf.FloorToInt(RemainTimeSeconds / 60f).ToString("00");
+        var sec = Mathf.FloorToInt(RemainTimeSeconds % 60f).ToString("00");
+        
+        if (RemainTimeSeconds >= 10)
         {
-            TMPro.text = $"{(int)(RemainTimeSeconds / 60)}:{(int)RemainTimeSeconds % 60}";
-        }
-        else if (RemainTimeSeconds >= 10)
-        {
-            TMPro.text = $"{(int)RemainTimeSeconds}";
+            TMPro.text = $"{min}:{sec}";
         }
         else if (RemainTimeSeconds >= 0)
         {
