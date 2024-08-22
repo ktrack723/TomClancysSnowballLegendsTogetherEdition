@@ -1,8 +1,10 @@
 using AutoLetterbox;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class SnowmanBuilder : MonoBehaviour
 {
@@ -179,6 +181,7 @@ public class SnowmanBuilder : MonoBehaviour
     public void BoomAllSnowball(BF_PlayerSnow start)
     {
         StartCoroutine(boomallcoroutine(start));
+        StartCoroutine(cameramovecoroutine());
     }
 
     private IEnumerator boomallcoroutine(BF_PlayerSnow start)
@@ -189,16 +192,44 @@ public class SnowmanBuilder : MonoBehaviour
 
         yield return new WaitForSeconds(1.1f);
 
-        for (int i = BuiltSnowballList.Count - 1; i >= 0; i--)
+        while (BuiltSnowballList.Count > 0)
         {
-            BuiltSnowballList[i].BoomSnowball();
+            var ball = BuiltSnowballList[BuiltSnowballList.Count - 1];
+            BuiltSnowballList.Remove(ball);
+            ball.BoomSnowball();
             yield return new WaitForSeconds(0.25f);
         }
-        BuiltSnowballList.Clear();
 
         yield return new WaitForSeconds(2.5f);
 
         HighestSnowmanHeight = 0;
         BackToGame();
+    }
+
+    private IEnumerator cameramovecoroutine()
+    {
+        Vector3 startPosition = transform.position;
+        Vector3 endPosition = startPosition - new Vector3(0, HighestSnowmanHeight, 0);
+
+        // 이동에 걸리는 시간
+        float elapsedTime = 0f;
+        float duration = 0.25f * BuiltSnowballList.Count;
+
+        yield return new WaitForSeconds(1.6f);
+
+        while (elapsedTime < duration)
+        {
+            // 비율 계산
+            float t = elapsedTime / duration;
+            // 위치 보간
+            transform.position = Vector3.Lerp(startPosition, endPosition, t);
+
+            // 시간 증가
+            elapsedTime += Time.deltaTime;
+            yield return null; // 다음 프레임까지 대기
+        }
+
+        // 최종 위치 설정 (정확한 위치 도달을 보장)
+        transform.position = endPosition;
     }
 }
