@@ -13,6 +13,7 @@ public class TimerUI : MonoBehaviour
     public TextMeshPro snowManText;
 
     public Camera mainCam;
+    public Camera builderCam;
     public Camera endingCam;
 
     public TransitionSettings transition;
@@ -73,7 +74,12 @@ public class TimerUI : MonoBehaviour
         TransitionManager.Instance().Transition(transition, 0);
         TransitionManager.Instance().onTransitionCutPointReached = () => {
             mainCam.enabled = false;
+            builderCam.enabled = false;
             endingCam.enabled = true;
+
+            var pos = SnowmanBuilder.Instance.transform.position;
+            pos.y = 0;
+            SnowmanBuilder.Instance.transform.position = pos;
         };
     }
 }
