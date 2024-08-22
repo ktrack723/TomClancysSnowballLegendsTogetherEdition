@@ -48722,11 +48722,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Squid
       objectReference: {fileID: 0}
-    - target: {fileID: 6511707354171424737, guid: cff5c4216e55745cca3483e644c1ded3,
-        type: 3}
-      propertyPath: m_Height
-      value: 0.8
-      objectReference: {fileID: 0}
     - target: {fileID: 7055623703143010623, guid: cff5c4216e55745cca3483e644c1ded3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -48920,11 +48915,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sparrow
-      objectReference: {fileID: 0}
-    - target: {fileID: 9084176275695602801, guid: 4bdea7f82f0ad4909bdd0497e0c8ae49,
-        type: 3}
-      propertyPath: speed
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
