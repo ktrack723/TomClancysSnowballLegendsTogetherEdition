@@ -26,6 +26,8 @@ public class SnowmanBuilder : MonoBehaviour
 
     public SmoothCameraFollow cameraFollow;
 
+    public TimerUI timer;
+
     public float DropperMoveSpeed;
 
     public float HighestSnowmanHeight;
@@ -40,15 +42,21 @@ public class SnowmanBuilder : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        BackToGame();
+        BackToGame(true);
 
         HighestSnowmanHeight = 0f;
     }
 
-    public void BackToGame()
+    public void BackToGame(bool isFirst = false)
     {
         if (!InBuildMode)
         {
+            return;
+        }
+
+        if (isFirst == false && AnimalManager.Instance.VictimList.Count == 0)
+        {
+            timer.EndGame();
             return;
         }
 

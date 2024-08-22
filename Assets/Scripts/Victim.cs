@@ -47,12 +47,5 @@ public class Victim : MonoBehaviour
         {
             anim.enabled = false;
         }
-
-        AnimalManager.Instance.VictimList.Remove(this);
-
-        if (AnimalManager.Instance.VictimList.Count == 0)
-        {
-            GameObject.Find("TimerText").GetComponent<TimerUI>().EndGame();
-        }
     }
 }

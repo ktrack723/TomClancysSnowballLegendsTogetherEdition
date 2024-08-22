@@ -134,6 +134,13 @@ public class BF_PlayerSnow : MonoBehaviour
             counters[index].fontStyle |= FontStyles.Strikethrough;
 
             GetComponent<AudioSource>().PlayOneShot(Yum, 4.5f);
+
+            AnimalManager.Instance.VictimList.Remove(victim);
+
+            if (AnimalManager.Instance.VictimList.Count == 0)
+            {
+                SnowmanBuilder.Instance.EnterBuilderMode();
+            }
         }
     }
 
