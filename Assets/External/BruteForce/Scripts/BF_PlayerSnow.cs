@@ -282,7 +282,8 @@ public class BF_PlayerSnow : MonoBehaviour
             var direction = obj.transform.position - transform.position;
             direction.Normalize();
 
-            rb.AddForce(direction);
+            rb.AddForce(direction * 500f);
+            rb.AddForce(Vector3.up * 1000f);
         }
 
         Destroy(gameObject);
