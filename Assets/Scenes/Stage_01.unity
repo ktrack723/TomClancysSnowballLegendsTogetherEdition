@@ -2901,7 +2901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TMPro: {fileID: 365801313}
-  RemainTimeSeconds: 10
+  RemainTimeSeconds: 150
   timerStop: 0
   snowManText: {fileID: 0}
   mainCam: {fileID: 330585545}
