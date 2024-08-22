@@ -493,8 +493,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.21
-  m_Height: 1.01
+  m_Radius: 0.2
+  m_Height: 0.6
   m_Direction: 2
   m_Center: {x: 0, y: 0.2, z: 0.12}
 --- !u!114 &9039528782404784029
@@ -512,6 +512,7 @@ MonoBehaviour:
   collider: {fileID: 0}
   rigidbody: {fileID: 0}
   IsCaught: 0
+  originalPrefab: {fileID: 0}
 --- !u!54 &2211789478597160345
 Rigidbody:
   m_ObjectHideFlags: 0
