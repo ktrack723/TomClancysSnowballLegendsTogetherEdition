@@ -572,6 +572,16 @@ PrefabInstance:
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 400
       objectReference: {fileID: 0}
+    - target: {fileID: 4756812229921577168, guid: be4579c87ca814499b3a6d09c36afce7,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756812229921577168, guid: be4579c87ca814499b3a6d09c36afce7,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5835093168450248925, guid: be4579c87ca814499b3a6d09c36afce7,
         type: 3}
       propertyPath: m_Name
@@ -48461,7 +48471,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1555179377}
 --- !u!4 &1054250374061765847
