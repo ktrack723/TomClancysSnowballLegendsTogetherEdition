@@ -15,7 +15,6 @@ Material:
   - USE_AL
   - USE_FOG
   - USE_LS
-  - USE_RT
   - USE_WC
   - _TESSELLATION_EDGE
   m_InvalidKeywords: []
@@ -355,7 +354,7 @@ Material:
     - _USEFOG: 1
     - _USEINTER: 0
     - _USELOW: 0
-    - _USERT: 1
+    - _USERT: 0
     - _USEWC: 1
     - _USEWT: 0
     - _UVSec: 0
