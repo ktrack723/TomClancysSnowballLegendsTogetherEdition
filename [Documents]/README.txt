@@ -10,7 +10,7 @@ Tom Glancy's SnowRoll Legends : Together Edition
 
     It's winter in the year 2077, and you decided to make a giant snowman so that you can get popular and somehow win the presidential election of the United States.
 
-But you figured out that normal snowman won't do, you needed something different.
+But you figured out that normal snowman won't just do, and you needed something different.
 
 Following your parent's advice, you decided to roll a snowball with animals in it, and make a super duper snowman then upload it to instagram! 
  
