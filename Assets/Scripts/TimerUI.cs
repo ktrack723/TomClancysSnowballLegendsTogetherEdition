@@ -16,6 +16,8 @@ public class TimerUI : MonoBehaviour
     public Camera builderCam;
     public Camera endingCam;
 
+    public List<GameObject> DisableObjects;
+
     public TransitionSettings transition;
 
     // Start is called before the first frame update
@@ -72,6 +74,11 @@ public class TimerUI : MonoBehaviour
             var pos = SnowmanBuilder.Instance.transform.position;
             pos.y = 0;
             SnowmanBuilder.Instance.transform.position = pos;
+
+            foreach (var obj in DisableObjects)
+            {
+                obj.SetActive(false);
+            }
 
             builderCam.enabled = false;
             endingCam.enabled = true;

@@ -2186,6 +2186,71 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d76f8cf6d6d23834d97c23574821f38e, type: 3}
+--- !u!1 &228278935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 228278936}
+  - component: {fileID: 228278937}
+  m_Layer: 0
+  m_Name: TimerObj
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &228278936
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228278935}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 365801312}
+  m_Father: {fileID: 330585546}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &228278937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228278935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241235246ea74844d8b1effdc22f1b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TMPro: {fileID: 365801313}
+  RemainTimeSeconds: 150
+  timerStop: 0
+  snowManText: {fileID: 0}
+  mainCam: {fileID: 330585545}
+  builderCam: {fileID: 7219271938913215245}
+  endingCam: {fileID: 564566008}
+  DisableObjects:
+  - {fileID: 104875380}
+  - {fileID: 1337112206}
+  - {fileID: 1121119836}
+  - {fileID: 781665449}
+  - {fileID: 974224218}
+  - {fileID: 932290635}
+  - {fileID: 148016081}
+  - {fileID: 1062220688}
+  - {fileID: 385457921}
+  - {fileID: 2026097342}
+  - {fileID: 365801311}
+  transition: {fileID: 11400000, guid: ad361d99bb2df454d961db24801d50a5, type: 2}
 --- !u!1 &237239533
 GameObject:
   m_ObjectHideFlags: 0
@@ -2668,7 +2733,7 @@ Transform:
   - {fileID: 1062220689}
   - {fileID: 385457922}
   - {fileID: 2026097343}
-  - {fileID: 365801312}
+  - {fileID: 228278936}
   m_Father: {fileID: 1410396224}
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!114 &330585547
@@ -2726,7 +2791,6 @@ GameObject:
   - component: {fileID: 365801312}
   - component: {fileID: 365801314}
   - component: {fileID: 365801313}
-  - component: {fileID: 365801315}
   m_Layer: 0
   m_Name: TimerText
   m_TagString: Untagged
@@ -2746,7 +2810,7 @@ RectTransform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 330585546}
+  m_Father: {fileID: 228278936}
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2888,26 +2952,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &365801315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 365801311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 241235246ea74844d8b1effdc22f1b35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TMPro: {fileID: 365801313}
-  RemainTimeSeconds: 150
-  timerStop: 0
-  snowManText: {fileID: 0}
-  mainCam: {fileID: 330585545}
-  builderCam: {fileID: 7219271938913215245}
-  endingCam: {fileID: 564566008}
-  transition: {fileID: 11400000, guid: ad361d99bb2df454d961db24801d50a5, type: 2}
 --- !u!1001 &376839991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53500,7 +53544,7 @@ PrefabInstance:
         type: 3}
       propertyPath: timer
       value: 
-      objectReference: {fileID: 365801315}
+      objectReference: {fileID: 228278937}
     - target: {fileID: 8198811886697054444, guid: 1ee7cafc0d6d7e04e96f583e0a3f4b04,
         type: 3}
       propertyPath: MainCamera
