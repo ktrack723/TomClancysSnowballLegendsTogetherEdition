@@ -35,6 +35,7 @@ public class SnowmanBuilder : MonoBehaviour
 
     private bool InBuildMode = true;
     private bool IsDropped = false;
+    public bool IsEndGame = false;
 
     private Vector3 inputDirection;
 
@@ -85,6 +86,11 @@ public class SnowmanBuilder : MonoBehaviour
     public void EnterBuilderMode()
     {
         if (InBuildMode)
+        {
+            return;
+        }
+
+        if (IsEndGame)
         {
             return;
         }

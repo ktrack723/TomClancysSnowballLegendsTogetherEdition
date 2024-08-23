@@ -71,6 +71,8 @@ public class TimerUI : MonoBehaviour
 
     public void EndGame()
     {
+        SnowmanBuilder.Instance.IsEndGame = true;
+
         TransitionManager.Instance().Transition(transition, 0);
         TransitionManager.Instance().onTransitionCutPointReached = () => {
             mainCam.enabled = false;
