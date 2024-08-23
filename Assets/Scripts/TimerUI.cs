@@ -68,13 +68,14 @@ public class TimerUI : MonoBehaviour
 
         TransitionManager.Instance().Transition(transition, 0);
         TransitionManager.Instance().onTransitionCutPointReached = () => {
-            mainCam.enabled = false;
-            builderCam.enabled = false;
-            endingCam.enabled = true;
 
             var pos = SnowmanBuilder.Instance.transform.position;
             pos.y = 0;
             SnowmanBuilder.Instance.transform.position = pos;
+
+            builderCam.enabled = false;
+            endingCam.enabled = true;
+            mainCam.enabled = false;
         };
     }
 }
