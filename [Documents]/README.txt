@@ -1,24 +1,25 @@
-Super U.R.U.K "One Room" Rampage
+Tom Glancy's SnowRoll Legends : Together Edition
 
 
 
 ~ Art, Programming, Sound Design, etc ~
 
-    SeungGeon Kim
+    SeungGeon Kim, DuHwan Kim
 
 ~ The Story ~
 
-    One day, a giant fire breathing fish, U.R.U.K, went to a contemporary art exhibition and was moved deeply by the paintings.
-He was moved so deeply that he decided to destroy all rooms of some buildings in town... Just leaving a single room.
-However, since his fireball was coded to only follow a living human, you, a living human, will help him tidy up the buildings,
-supporting U.R.U.K's first bold step as a contemporary artist.
+    It's winter in the year 2077, and you decided to make a giant snowman so that you can get popular and somehow win the presidential election of the United States.
+
+But you figured out that normal snowman won't do, you needed something different.
+
+Following your parent's advice, you decided to roll a snowball with animals in it, and make a super duper snowman then upload it to instagram! 
  
 ~ Controls ~
 
     WASD to move
-    SPACE to dash
+    O to enter snowman building mode
+    SPACE to drop snowball during snowman building mode
 
 
 
-All the rooms get blown up except for a single room... So "One Room" it is!
-Also, the Sun is smiling, and some of U.R.U.K's voices were recorded by me.
+In the game, each time you drop the snowball to build a snowman, you must 'start' rolling a new, 'small' snowball from the beginning. As you roll it, the snowball gradually grows larger, symbolizing the progress you make with your efforts.
