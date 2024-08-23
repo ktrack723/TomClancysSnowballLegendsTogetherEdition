@@ -1,4 +1,5 @@
 using AutoLetterbox;
+using EasyTransition;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -155,6 +156,14 @@ public class SnowmanBuilder : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.O))
         {
             EnterBuilderMode();
+        }
+
+        if (IsEndGame)
+        {
+            if (Input.GetKeyDown(KeyCode.Backspace))
+            {
+                TransitionManager.Instance().Transition("Heaven", timer.transition, 0);
+            }
         }
     }
 

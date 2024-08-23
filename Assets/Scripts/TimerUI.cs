@@ -60,13 +60,6 @@ public class TimerUI : MonoBehaviour
 
     private void Update()
     {
-        if (endingCam.enabled == true)
-        {
-            if (Input.GetKeyDown(KeyCode.Backspace))
-            {
-                TransitionManager.Instance().Transition("Heaven", transition, 0);
-            }
-        }
     }
 
     public void EndGame()
